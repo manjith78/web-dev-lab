@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Course Registration Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #0d47a1;
+        }
+
+        fieldset {
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-top: 10px;
+        }
+
+        input, select, textarea {
+            width: 250px;
+            padding: 5px;
+        }
+
+        progress {
+            width: 100%;
+        }
+
+        .btns {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Registration Form for Online Courses -->
+    <h1>Online Course Registration Portal</h1>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend><h2>Personal Details</h2></legend>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit number"><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob"><br>
+
+            <label for="website">Portfolio URL:</label>
+            <input type="url" id="website" name="website" placeholder="https://example.com"><br>
+
+            <label for="search">Search Course:</label>
+            <input type="search" id="search" name="search"><br>
+
+            <label for="photo">Upload Photo:</label>
+            <input type="file" id="photo" name="photo"><br>
+        </fieldset>
+
+        <fieldset>
+            <legend><h2>Course Selection</h2></legend>
+
+            <label for="course">Choose Course:</label>
+            <select id="course" name="course">
+                <option value="web">Web Development</option>
+                <option value="data">Data Science</option>
+                <option value="ai">AI & ML</option>
+                <option value="cyber">Cyber Security</option>
+            </select><br>
+
+            <label>Mode:</label>
+            <input type="radio" id="online" name="mode" value="online" checked>
+            <label for="online">Online</label>
+            <input type="radio" id="offline" name="mode" value="offline">
+            <label for="offline">Offline</label><br>
+
+            <label>Modules:</label><br>
+            <input type="checkbox" id="html" name="modules" value="HTML">
+            <label for="html">HTML</label><br>
+            <input type="checkbox" id="css" name="modules" value="CSS">
+            <label for="css">CSS</label><br>
+            <input type="checkbox" id="js" name="modules" value="JavaScript">
+            <label for="js">JavaScript</label><br>
+
+            <label for="experience">Prior Experience:</label><br>
+            <textarea id="experience" name="experience" rows="4" cols="50" placeholder="Describe your background..."></textarea><br>
+        </fieldset>
+
+        <fieldset>
+            <legend><h2>Progress</h2></legend>
+            <label for="progress">Form Completion:</label><br>
+            <progress id="progress" value="60" max="100"></progress>
+        </fieldset>
+
+        <div class="btns">
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+        </div>
+    </form>
+
+</body>
+</html>
