@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Library Info Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #fdfcfb, #e2d1c3);
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: bisque;
+            padding: 15px 30px;
+            border-radius: 20px;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-left div {
+            background-color: #4d4945;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 15px;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-left p {
+            font-style: italic;
+            font-size: 20px;
+            margin: 0;
+            color: #333;
+        }
+
+        .header-right input[type="text"] {
+            padding: 8px 12px;
+            border: 1px solid #999;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .header-right input[type="text"]:focus {
+            border-color: #444;
+        }
+        .header-right button {
+            padding: 8px 15px;
+            background-color: #727272;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .header-right button:hover {
+            background-color: #555;
+        }
+        .main-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            opacity: 0.95;
+            border-bottom: 3px solid #ddd;
+        }
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            color: #2f2f2f;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+        .card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #eee;
+            font-size: 14px;
+            color: #333;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div>library info</div>
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="Search..." name="search" />
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+
+    <img class="main-image" src="library1.jpeg" alt="Inside view of Central Library">
+
+    <div class="content">
+        <div class="card">
+            <h2>About the Library</h2>
+            <p>Welcome to the Central Library. We offer a wide range of books, journals, and digital resources for all students and faculty. It's a hub for knowledge and research.</p>
+        </div>
+
+        <div class="card">
+            <h2>Facilities</h2>
+            <p>Our library features reading rooms, computer labs, e-journal access, group discussion zones, and a peaceful study environment with 24x7 access during exam weeks.</p>
+        </div>
+
+        <div class="card">
+            <h2>Library Rules</h2>
+            <p>Please maintain silence, carry your ID card, avoid food/drinks inside, return books on time, and respect others’ study space. Fine applies for late returns.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Central Library | Designedfor learning
+    </footer>
+</body>
+</html>
