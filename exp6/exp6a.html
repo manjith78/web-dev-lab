@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payroll Calculator</title>
+    <link rel="stylesheet" href="exp6a.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+    $('#calculateBtn').click(function() {
+    
+        const basicSalary = parseFloat($('#basicSalary').val()) || 0;
+        const hra = parseFloat($('#hra').val()) || 0;
+        const da = parseFloat($('#da').val()) || 0;
+        const incentive = parseFloat($('#incentive').val()) || 0;
+
+        
+        const grossSalary = basicSalary + hra + da + incentive;
+
+        
+        let taxAmount = 0;
+        if (grossSalary > 80000) {
+            taxAmount = grossSalary * 0.20; 
+        } else if (grossSalary > 60000) {
+            taxAmount = grossSalary * 0.15; 
+        } else if (grossSalary > 40000) {
+            taxAmount = grossSalary * 0.10; 
+        } else if (grossSalary > 20000) {
+            taxAmount = grossSalary * 0.05; 
+        }
+
+        
+        const netSalary = grossSalary - taxAmount;
+
+        
+        $('#grossSalary').text(grossSalary.toFixed(2));
+        $('#taxAmount').text(taxAmount.toFixed(2));
+        $('#netSalary').text(netSalary.toFixed(2));
+    });
+});
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Payroll Calculator</h1>
+        <div class="input-group">
+            <label for="basicSalary">Basic Salary:</label>
+            <input type="number" id="basicSalary" value="50000">
+        </div>
+        <div class="input-group">
+            <label for="hra">HRA:</label>
+            <input type="number" id="hra" value="20000">
+        </div>
+        <div class="input-group">
+            <label for="da">DA:</label>
+            <input type="number" id="da" value="40000">
+        </div>
+        <div class="input-group">
+            <label for="incentive">Incentive/Allowances:</label>
+            <input type="number" id="incentive" value="5000">
+        </div>
+        <button id="calculateBtn">Calculate Salary</button>
+        <div class="results">
+            <p>Gross Salary: <span id="grossSalary">0.00</span></p>
+            <p>Tax Amount: <span id="taxAmount">0.00</span></p>
+            <p>Net Salary: <span id="netSalary">0.00</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
